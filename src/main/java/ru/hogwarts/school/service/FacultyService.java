@@ -25,6 +25,10 @@ public class FacultyService {
         return facultyRepository.findById(id).get();
     }
 
+    public Collection<Student> findStudentsByFaculty(long id) {
+        return facultyRepository.findById(id).get().getStudents();
+    }
+
     public Faculty editFaculty(Faculty faculty) {
         return facultyRepository.save(faculty);
     }
